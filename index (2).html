@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kaviya Sathishkumar – Automation and AI engineer</title>
+<meta name="description" content="Portfolio of Kaviya Sathishkumar: internal apps, RAG systems and agentic workflows.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#e9eef2; --ink:#16202b; --muted:#4d5b6a; --line:#b9c4ce;
+  --accent:#0d6b68; --mark:#f3d77a; --step:#dbe4ea;
+  --head:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#12191f; --ink:#e6ecf1; --muted:#9aa9b6; --line:#2c3944;
+    --accent:#5fc4bd; --mark:#6b5a1c; --step:#1d2830;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:1rem}
+body{margin:0;background:var(--bg);color:var(--ink);font:1.125rem/1.65 var(--body);
+  padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0)}
+.wrap{max-width:46rem;margin:0 auto;padding:3rem 1.25rem 4rem}
+h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0}
+h1{font-size:clamp(2.6rem,9vw,4.6rem);font-weight:700;letter-spacing:-.025em}
+h2{font-size:1.5rem;font-weight:700;margin:4rem 0 1.25rem;letter-spacing:-.01em}
+h3{font-size:1.3rem;font-weight:700}
+a{color:var(--accent);text-underline-offset:.2em}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.lede{font-size:1.35rem;max-width:34rem;margin:1.25rem 0 .75rem}
+.meta{color:var(--muted);margin:0}
+nav{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin-top:1.5rem;font-family:var(--head);font-weight:500}
+
+/* the one memorable element: the pipeline */
+.pipe{margin:3rem 0 0}
+.pipe p{font-family:var(--head);font-weight:500;margin:0 0 .75rem;color:var(--muted);font-size:1rem}
+.pipe ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:.5rem}
+.pipe li{background:var(--step);border-left:4px solid var(--line);padding:.6rem .75rem;font-family:var(--head);
+  font-weight:500;font-size:.98rem;line-height:1.25;animation:lit 2.4s ease both;animation-delay:calc(var(--i)*.35s)}
+.pipe li small{display:block;font-family:var(--body);font-weight:400;color:var(--muted);font-size:.85rem;margin-top:.2rem}
+@keyframes lit{0%,20%{border-left-color:var(--line)}35%{border-left-color:var(--accent);background:var(--mark)}100%{border-left-color:var(--accent);background:var(--step)}}
+
+/* projects */
+.project{border-top:2px solid var(--ink);padding:1.5rem 0 2.5rem}
+.project h3 span{display:block;font-family:var(--body);font-weight:400;font-size:1rem;color:var(--muted);margin-top:.35rem}
+dl{margin:1.25rem 0 0;display:grid;grid-template-columns:8rem 1fr;gap:.9rem 1.25rem}
+dt{font-family:var(--head);font-weight:500;color:var(--muted);font-size:1rem}
+dd{margin:0;max-width:34rem}
+.todo{background:var(--mark);padding:.05em .3em}
+@media(max-width:34rem){dl{grid-template-columns:1fr;gap:.1rem}dd{margin-bottom:.8rem}}
+
+.now li,.exp li{margin:.4rem 0}
+ul{padding-left:1.1rem}
+.exp{list-style:none;padding:0}
+.exp b{font-family:var(--head)}
+footer{margin-top:4rem;border-top:2px solid var(--ink);padding-top:1.5rem}
+@media (prefers-reduced-motion:reduce){.pipe li{animation:none;border-left-color:var(--accent)}}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+<header>
+  <h1>Kaviya Sathishkumar</h1>
+  <p class="lede">I build automation and AI tools that take repetitive work off people’s desks.</p>
+  <p class="meta">Product Development Engineer at Royal Enfield, UK. MSc International Business Management. Four years across testing, business systems and applied AI.</p>
+  <nav aria-label="Main">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="Kaviya_Sathishkumar.pdf">CV (PDF)</a>
+  </nav>
+
+  <div class="pipe" aria-label="Diagram of the proposal automation pipeline">
+    <p>The proposal pipeline I’m building, from RFP to draft:</p>
+    <ol>
+      <li style="--i:0">RFP intake<small>document arrives</small></li>
+      <li style="--i:1">Mask PII<small>before any LLM call</small></li>
+      <li style="--i:2">Retrieve<small>Qdrant, company credentials</small></li>
+      <li style="--i:3">Draft<small>Claude through MCP</small></li>
+      <li style="--i:4">Compliance<small>rulebook check</small></li>
+      <li style="--i:5">Human review<small>strategy and pricing</small></li>
+    </ol>
+  </div>
+</header>
+
+<section id="work">
+  <h2>Selected work</h2>
+
+  <article class="project">
+    <h3>Proposal automation pipeline<span>In development. n8n, Claude, Qdrant, MCP</span></h3>
+    <dl>
+      <dt>Problem</dt><dd>A proposal normally takes 5 to 7 days by hand, and most of that time goes on formatting and boilerplate.</dd>
+      <dt>What I built</dt><dd>An agentic workflow from RFP intake to a submission-ready draft. It masks client PII before anything reaches the model, drafts from the client brief and company credentials, validates against a compliance rulebook, then stops for human approval.</dd>
+      <dt>A decision</dt><dd>Client details are masked before anything reaches the model, not cleaned up afterwards, so sensitive data can’t leak through a bad draft. I also kept a human approval step at the end, so reviewers spend their time on strategy, pricing and client relationships instead of formatting.</dd>
+      <dt>Result so far</dt><dd>Still in development, so I’m not claiming a final time saving yet. The masking, retrieval, compliance check and approval stages are built, and the goal is to bring the 5 to 7 day cycle down.</dd>
+      <dt>Next</dt><dd>Run it on more past proposals and measure the real time saved before putting a number on it.</dd>
+      <dt>Links</dt><dd><a href="#">Demo video</a> · <a href="#">Architecture diagram</a> · <a href="#">GitHub</a></dd>
+    </dl>
+  </article>
+
+  <article class="project">
+    <h3>RAG for internal documents<span>Ongoing. Python, LangGraph, Qdrant</span></h3>
+    <dl>
+      <dt>Problem</dt><dd>Bids and reports were hard to search, and keyword search missed domain-specific terms.</dd>
+      <dt>What I built</dt><dd>A retrieval system with hybrid keyword and semantic search, plus a relevance scoring step that re-ranks passages before they reach the model. I also tuned chunking, indexing and query routing.</dd>
+      <dt>A decision</dt><dd>Keyword search alone kept missing industry-specific terms, so I added semantic vector search on top of it. Then I added a scoring step that re-ranks the passages, so the most relevant ones reach the model first.</dd>
+      <dt>Result</dt><dd>Manual document search effort down by 60%. <span class="todo">Add how you measured it, for example average time to find a document before and after. Delete this line if you can’t.</span></dd>
+      <dt>Links</dt><dd><a href="#">GitHub</a> · <a href="#">Write-up</a></dd>
+    </dl>
+  </article>
+
+  <article class="project">
+    <h3>CRM reporting tool<span>EFA Engineering, 2025. Python, Excel, Power BI, Power Automate</span></h3>
+    <dl>
+      <dt>Problem</dt><dd>A fast-growing startup was running on spreadsheets. It struggled to keep up with bids and proposals, to win new clients and to reach its target audience, and had no single view of how sales were going.</dd>
+      <dt>What I built</dt><dd>I listened to sales, operations and the directors first to understand what they needed, then built an internal CRM reporting and automation tool with live dashboards.</dd>
+      <dt>Result</dt><dd>Manual reporting time down 70%. Used by 30+ people in the commercial team, with 95% satisfaction.</dd>
+    </dl>
+  </article>
+
+  <article class="project">
+    <h3>Internal apps on AppSheet<span>Royal Enfield, 2026. AppSheet, Google Apps Script</span></h3>
+    <dl>
+      <dt>Problem</dt><dd>Teams tracked work in spreadsheets, with no clear view of who had picked up what.</dd>
+      <dt>What I built</dt><dd>Multi-user apps with automated email alerts when a task is completed, and action tracking that shows what has been picked up, by whom, and what is still pending.</dd>
+      <dt>How it went</dt><dd>I spotted process gaps myself and built fixes without a formal brief, then released upgrades as the apps matured. I demoed the most complex automations live to the people using them in my first month.</dd>
+      <dt>Screenshots</dt><dd>Not shown publicly for now, because these are internal company tools. I’m happy to walk you through them on a call.</dd>
+    </dl>
+  </article>
+</section>
+
+<section id="about">
+  <h2>About</h2>
+  <p>I started in software testing. In my final year at Sri Krishna College of Technology I was placed at Nineleaps through campus recruitment, and my first job was as an SDET: writing automated tests, checking APIs and hunting for security holes in FinTech software.</p>
+  <p>Testing taught me how things break. What I wanted next was to build the things that fix people’s everyday work. Small businesses often struggle to get what they need, when they need it, because the people who understand their problems and the people who build tools are far apart. I want to work in that gap: understand the business need first, then build the system for it.</p>
+  <p>That is why I did my MSc in International Business Management in the UK, and why my work since mixes business and engineering. My role at EFA Engineering came through my university placement, where I built a CRM reporting tool. Now I build internal apps at Royal Enfield and AI systems like the ones above.</p>
+  <p>I’m fluent in English, and Tamil is my first language.</p>
+
+  <h2>Where I’ve worked</h2>
+  <ul class="exp">
+    <li><b>Royal Enfield</b>, Product Development Engineer, 2026 to now</li>
+    <li><b>London Success Academy</b>, AI/ML Intern, 2026 to now. Data analysis, predictive models, AI failure and bias research.</li>
+    <li><b>EFA Engineering</b>, Graduate Business Development Manager, 2025 to 2026</li>
+    <li><b>Nineleaps</b>, SDET, 2023 to 2024. Selenium, Cypress, Postman, security testing with OWASP ZAP.</li>
+  </ul>
+
+  <h2>Right now</h2>
+  <ul class="now">
+    <li>Building: the proposal pipeline above</li>
+    <li>Studying: AWS Cloud/AI Practitioner</li>
+    <li><span class="todo">Reading or listening to: your pick</span></li>
+  </ul>
+</section>
+
+<footer id="contact">
+  <h2 style="margin-top:0">Work with me</h2>
+  <p>I’m open to automation, AI workflow and internal tools projects. The quickest way to reach me is email.</p>
+  <p>
+    <a href="mailto:kaviyanidharshan@gmail.com">kaviyanidharshan@gmail.com</a><br>
+    <a href="https://linkedin.com/in/kaviya-sathishkumar">LinkedIn</a> ·
+    <a href="https://github.com/kaviyasathishkumar">GitHub</a> ·
+    <a href="#">Upwork</a>
+  </p>
+</footer>
+
+</main>
+</body>
+</html>
